@@ -1,0 +1,25 @@
+server:
+  servlet:
+    context-path: /criteria-tolls-lab
+  port: 8080
+spring:
+  application:
+    name: criteria-tools-lab
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    driver-class-name: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:criteria-tools-lab}
+    password: ${SPRING_DATASOURCE_PASSWORD:criteria-tools-lab}
+    hikari:
+      auto-commit: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      connection:
+        provider_disables_autocommit: true
+      hibernate:
+        format_sql: true
+        generate_statistics: false
+        use_sql_comments: true
+    defer-datasource-initialization: true

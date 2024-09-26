@@ -1,0 +1,16 @@
+version: "2.4"
+services:
+  criteria-tools-lab-postgres:
+    image: postgres:14.9
+    container_name: criteria-tools-lab-postgres14.9
+    environment:
+      - POSTGRES_USER=criteria-tools-lab
+      - POSTGRES_PASSWORD=criteria-tools-lab
+      - POSTGRES_DB=postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - criteria-tools-lab-net
+networks:
+  criteria-tools-lab-net:
+    name: criteria-tools-lab-net
