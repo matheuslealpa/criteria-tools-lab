@@ -2,6 +2,7 @@ package org.example.lab.app.service.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.lab.app.domain.SettingsType;
 import org.example.lab.app.domain.Settings;
 import org.example.lab.app.repository.SettingsTypeRepository;
@@ -13,14 +14,23 @@ import java.util.Optional;
 @Service
 @Transactional
 @AllArgsConstructor
+@Slf4j
 public class SettingsServiceImpl implements SettingsService {
 
     private SettingsTypeRepository settingsTypeRepository;
 
     @Override
     public Optional<SettingsType> getSettingsByName(String nome) {
-        return settingsTypeRepository.findByNome(nome);
+        return settingsTypeRepository.findByNome(nome)
+                .map(settingsType -> {
+                    settingsType.getConfiguracoes().forEach((key, settings) -> {
+                        Object valor = settings.getValue();  // Pega o valor dinâmico baseado no tipo
+                        System.out.println("Chave: " + key + ", Valor: " + valor + ", Tipo: " + settings.getTipo());
+                    });
+                    return settingsType;
+                });
     }
+
 
     // Método para buscar uma configuração específica por chave
     @Override
