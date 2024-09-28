@@ -1,12 +1,12 @@
-package org.example.lab.app.service.impl;
+package org.example.lab.app.service.preferences.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.lab.app.domain.SettingsType;
-import org.example.lab.app.domain.Settings;
+import org.example.lab.app.domain.preferences.SettingsType;
+import org.example.lab.app.domain.preferences.Settings;
 import org.example.lab.app.repository.SettingsTypeRepository;
-import org.example.lab.app.service.SettingsService;
+import org.example.lab.app.service.preferences.SettingsService;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

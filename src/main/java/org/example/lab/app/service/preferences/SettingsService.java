@@ -1,7 +1,7 @@
-package org.example.lab.app.service;
+package org.example.lab.app.service.preferences;
 
-import org.example.lab.app.domain.Settings;
-import org.example.lab.app.domain.SettingsType;
+import org.example.lab.app.domain.preferences.Settings;
+import org.example.lab.app.domain.preferences.SettingsType;
 
 import java.util.Optional;
 

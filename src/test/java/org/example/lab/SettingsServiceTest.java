@@ -1,10 +1,10 @@
 package org.example.lab;
 
-import org.example.lab.app.service.impl.SettingsServiceImpl;
+import org.example.lab.app.service.preferences.impl.SettingsServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.example.lab.app.domain.Settings;
-import org.example.lab.app.domain.SettingsType;
+import org.example.lab.app.domain.preferences.Settings;
+import org.example.lab.app.domain.preferences.SettingsType;
 import org.example.lab.app.repository.SettingsTypeRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

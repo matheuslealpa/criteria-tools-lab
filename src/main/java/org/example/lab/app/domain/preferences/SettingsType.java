@@ -1,4 +1,4 @@
-package org.example.lab.app.domain;
+package org.example.lab.app.domain.preferences;
 
 import jakarta.persistence.*;
 import lombok.*;

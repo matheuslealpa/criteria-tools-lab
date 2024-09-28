@@ -1,7 +1,7 @@
 package org.example.lab.app.rest;
 
 import lombok.AllArgsConstructor;
-import org.example.lab.app.service.SettingsService;
+import org.example.lab.app.service.preferences.SettingsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
