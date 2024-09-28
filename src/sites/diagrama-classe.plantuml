@@ -1,0 +1,7 @@
+@startuml
+
+Microregiao "many" <--* "1" Messoregiao
+Cidade "many" <--* "1" Microregiao
+Messoregiao "many" <--*  "1" Uf
+
+@enduml

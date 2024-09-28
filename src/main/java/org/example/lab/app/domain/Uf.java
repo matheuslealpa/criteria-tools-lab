@@ -1,9 +1,13 @@
 package org.example.lab.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
-import org.example.lab.app.domain.enums.Regiao;
 import org.hibernate.annotations.Check;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -14,8 +18,7 @@ import org.hibernate.annotations.Check;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "UF", indexes = {
-        @Index(name = "IDX_UF_SIGLA", columnList = "SG_UF"),
-        @Index(name = "IDX_UF_REGIAO", columnList = "NM_REGIAO")
+        @Index(name = "IDX_UF_SIGLA", columnList = "SG_UF")
 })
 public class Uf {
 
@@ -25,15 +28,10 @@ public class Uf {
     @Column(name = "CD_UF")
     private Long id;
 
-    @Column(name = "NM_UF")
+    @Column(name = "NM_UF", unique = true, nullable = false)
     private String nome;
 
-    @Column(name = "SG_UF")
+    @Column(name = "SG_UF", unique = true, nullable = false)
     private String sigla;
-
-    @Column(name = "NM_REGIAO")
-    @Enumerated(EnumType.STRING)
-    @Check(constraints = "NM_REGIAO IN ('NORTE', 'NORDESTE', 'CENTRO_OESTE', 'SUDESTE', 'SUL')")
-    private Regiao regiao;
 
 }
